@@ -1,0 +1,268 @@
+/*Ogólne -- Czcionki*/ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto+Condensed:wght@300&display=swap');
+/*
+General Gray - rgba(84,85,84,255)
+Genaral Brown - rgb(128,84,52)
+*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    font-family: 'Poppins';
+    background-color: white;
+}
+.font_container
+{
+    font-family: 'Roboto Condensed';
+    text-align: center;
+    font-size: 300%;
+    font-weight: 900;
+    
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.font_container_desc
+{  
+    font-weight: 100;
+    font-size: 50%;
+}
+
+
+
+/*Menu -- logo*/
+#menu
+{
+    
+    background: rgb(0,0,0);
+    background: linear-gradient(146deg, rgba(0,0,0,1) 0%, rgba(84,85,84,1) 100%);
+    
+    border-bottom: 2px white solid;
+    text-align: center;
+    width: 100%;
+    display:flex;
+    justify-content: space-around;  
+    
+}
+
+#menu_logo
+{
+    background-image: url("assets/logo.png");
+    background-color: transparent;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+}
+#menu_logo:hover
+{
+    transform: scale(1.05);
+    animation: scale 0.25s;
+}
+
+
+/*Nawigacja*/
+#nav
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.nav_item
+{
+    margin-top:auto;
+    margin-bottom: auto;
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    align-content: center;
+    font-size:200%;
+    background-color: white;
+    color: rgba(84,85,84,255);
+    font-family: 'Roboto Condensed';
+    box-shadow: rgba(0, 0, 0, 0.403) 0px 0px 20px;
+}
+/*Nawigacja -- Animacje*/
+.nav_item:hover
+{
+    animation: color 0.25s;
+    background-color: rgba(84,85,84,255);
+    color: rgba(254,254,255,255);   
+}
+
+@media (max-width: 750px)
+{
+    
+}
+
+/*Kontener*/
+#container
+{
+    background-image: url("assets/tlo2.png");
+    color: white;
+    background-color: rgba(84,85,84,255);
+    background-attachment:fixed;
+    background-size:cover;
+    height:500px;
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 10;
+    
+}
+#blur_cont
+{
+    z-index: 0;
+    background-color: transparent;
+    color: white;
+    height:500px;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    align-items: center;    
+}
+
+#blur_cont:hover
+{
+    z-index: 0;
+    background-color: transparent;
+    color: white;
+    height:500px;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    animation:blur_anim 0.25s;
+}
+
+
+/*Opis*/
+#desc
+{
+    margin-top:80px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+.desc_box
+{
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    
+}
+.desc_icon
+{
+
+}
+.desc_icon:hover
+{
+    transform: scale(1.05);
+    animation: scale 0.25s;
+}
+
+.desc_text
+{
+    font-family: 'Roboto Condensed';
+    text-align: center;
+    font-weight: 900;
+    color:rgba(84,85,84,255); 
+    border-bottom: 2px solid rgba(84,85,84,255);
+}
+.desc_desc
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    font-family: 'Roboto Condensed';
+    text-align: center;
+    color:rgba(84,85,84,255);
+    box-shadow: rgba(0, 0, 0, 0.403) 30px 20px 25px;
+}
+
+
+
+
+/*GALERIA*/
+
+
+
+
+
+
+
+
+
+
+/*STOPKA*/
+#footer
+{
+    height: 300px;
+    width: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(146deg, rgba(0,0,0,1) 0%, rgba(84,85,84,1) 100%);
+}
+
+
+
+a
+{
+    text-decoration: none;
+    color:rgba(84,85,84,255);
+}
+
+
+
+
+
+
+
+
+
+/*ANIMACJA*/
+@keyframes scale
+{
+    from
+    {
+        transform: scale(1.0);
+    }
+    to
+    {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes color
+{
+    from
+    {
+        background-color: rgba(254,254,255,255);
+        color: rgba(84,85,84,255);
+    }
+    to
+    {
+        color: rgba(254,254,255,255);
+    }
+}
+
+@keyframes blur_anim
+{
+    from
+    {
+        backdrop-filter: blur(0px);
+    }
+    to
+    {
+        backdrop-filter: blur(10px);
+    }
+}
