@@ -171,6 +171,13 @@ body
     justify-content: space-around;
     margin-bottom:80px;
 }
+@media (max-width:900px)
+{
+    .desc{
+        display: flex;
+        flex-direction: column;
+    }
+}
 .desc_box
 {
     display: flex;
