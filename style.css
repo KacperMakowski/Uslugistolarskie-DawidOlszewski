@@ -143,6 +143,13 @@ body
     backdrop-filter: blur(10px);
     animation:blur_anim 0.25s;
 }
+@media (max-width: 900px)
+{
+    #blur_cont
+    {
+        
+    }
+}
 
 
 /*Opis*/
