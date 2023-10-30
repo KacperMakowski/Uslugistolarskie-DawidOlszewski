@@ -1,5 +1,7 @@
 /*Ogólne -- Czcionki*/ 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&family=Poppins:ital,wght@1,600&display=swap');
 /*
 General Gray - rgba(84,85,84,255)
 Genaral Brown - rgb(128,84,52)
@@ -13,7 +15,7 @@ Genaral Brown - rgb(128,84,52)
 body
 {
     font-family: 'Poppins';
-    background-color: white;
+    background-color: rgb(227, 227, 227);
 }
 .font_container
 {
@@ -37,7 +39,7 @@ body
     
     background: rgb(0,0,0);
     background: linear-gradient(146deg, rgba(0,0,0,1) 0%, rgba(84,85,84,1) 100%);
-    border-bottom: 2px white solid;
+    border-bottom: 2px rgb(227, 227, 227) solid;
     text-align: center;
     width: 100%;
     display:flex;
@@ -54,13 +56,11 @@ body
     height: 150px;
     background-position: center;
     background-size: cover;
+    animation: start_move 0.65s ease-in;
+    transform: 0px;
+
 }
 
-#menu_logo:hover
-{
-    transform: scale(1.05);
-    animation: scale 0.25s;
-}
 
 
 /*Nawigacja*/
@@ -70,13 +70,13 @@ body
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-color: white;
+    background-color:rgb(227, 227, 227);
     width: 100%;
     display: flex;
     justify-content:center;
     align-items: center;
     flex-wrap: wrap;    
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid rgb(227, 227, 227);
 
 }
 .nav_item
@@ -88,7 +88,7 @@ body
     justify-content: center;
     align-content: center;
     font-size:200%;
-    background-color: white;
+    background-color: rgb(227, 227, 227);
     color: rgba(84,85,84,255);
     font-family: 'Roboto Condensed';
     box-shadow: rgba(0, 0, 0, 0.403) 0px 0px 20px;
@@ -126,19 +126,7 @@ body
     z-index: 10;
     
 }
-#blur_cont
-{
-    z-index: 0;
-    background-color: transparent;
-    color: white;
-    height:500px;
-    width: 100%;
-    display: flex;
-    justify-content:center;
-    flex-wrap: wrap;
-    align-items: center;    
-}
-
+    
 /*#blur_cont:hover
 {
     z-index: 0;
@@ -153,13 +141,22 @@ body
     backdrop-filter: blur(10px);
     animation:blur_anim 0.25s;
 }*/
-@media (max-width:1000px)
+
+
+/*GALERIA*/
+
+
+#gallery
 {
-    #blur_cont:hover
-    {
-        animation: none;
-    }
+
 }
+
+
+
+
+
+
+
 
 /*Opis*/
 .desc
@@ -167,9 +164,15 @@ body
     margin-top:80px;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     justify-content: space-around;
     margin-bottom:80px;
+    padding-top: 15px;
+}
+
+.desc_double:hover
+{
+    animation: desc_anim 0.25s;
+    border-radius: 15px;
 }
 @media (max-width:900px)
 {
@@ -185,36 +188,38 @@ body
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 15px;
-
-    
+    transform: scale(1.0);
+    transform: translateY(0px);
+}
+.desc_box:hover{
+    animation: desc_anim2 0.25s;
+    transform: translateY(30px) scale(1.1);
 }
 .desc_icon
 {
     z-index: 999;
 
 }
-.desc_icon:hover
-{
-    transform: scale(1.05);
-    animation: scale 0.25s;
-}
+
 .desc_double
 {
-    background-color: rgb(227, 227, 227);
-    border-left: 20px solid rgb(227, 227, 227);
-    border-top:80px solid rgb(227, 227, 227);
-    border-right: 20px solid rgb(227, 227, 227);
+    background-color: white;
+    border-left: 20px solid white;
+    border-top:80px solid white;
+    border-right: 20px solid white;
+    border-bottom: 20px solid white;
     margin-top: -80px;
     border-radius: 5px;
 }
 .desc_text
 {
 
-    font-family: 'Roboto Condensed';
+    font-family: "Playball",Sans-serif;
     text-align: center;
     font-weight: 900;
+    font-size:150%;
     color:black; 
-    border-bottom: 2px solid rgb(227, 227, 227);
+    border-bottom: 2px solid white;
 
     z-index: 0;
 }
@@ -228,11 +233,27 @@ body
     text-align: center;
     color:black;
 }
+.desc_button
+{   
+    font-family: 'Poppins', sans-serif;
+    background: rgb(0,0,0);
+    background: linear-gradient(146deg, rgba(0,0,0,1) 0%, rgba(84,85,84,1) 100%);
+    border-radius: 20px;
+    color:white;
+    text-align: center;
+    transform: scale(1.0);
+}
+.desc_button:hover
+{
+    background: rgb(227, 227, 227);
+    border-radius: 20px;
+    color:white;
+    text-align: center;
+    animation: scale 0.25s;
+    transform: scale(1.05);
+    color: black;
+}
 
-
-
-
-/*GALERIA*/
 
 
 
@@ -250,8 +271,18 @@ body
     width: 100%;
     background: rgb(0,0,0);
     background: linear-gradient(146deg, rgba(0,0,0,1) 0%, rgba(84,85,84,1) 100%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 }
-
+.footer_box
+{
+    color: white;
+}
+h5 .footer_box{
+    border-bottom: 1px solid white;
+}
 
 
 a
@@ -331,6 +362,20 @@ a
 .active.fade-right {
   animation: fade-right 1s ease-in;
 }
+
+
+
+@keyframes start_move
+{
+    0%{
+        transform:  scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1.0);
+        opacity: 1;
+    }
+}
 @keyframes fade-bottom {
   0% {
     transform: translateY(50px);
@@ -361,4 +406,31 @@ a
     transform: translateX(0);
     opacity: 1;
   }
+}
+@keyframes desc_anim
+{
+    0%
+    {
+        border-radius: 5px;
+       
+    }
+    50%
+    {
+        border-radius: 10px;
+      
+    }
+    100%
+    {
+        border-radius: 15px;
+       
+    }
+}
+@keyframes desc_anim2
+{
+    0%{
+        transform: translateY(0px) scale(1.0);
+    }
+    100%{ 
+        transform: translateY(30px) scale(1.1);
+    }
 }
