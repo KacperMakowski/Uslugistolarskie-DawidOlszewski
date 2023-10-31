@@ -110,19 +110,41 @@
             </div>
      
     </div>
-
-
 <div id="footer">
+<div id="footer_left">
+
     <div class="footer_box">
         <h5 style="border-bottom: 1px solid white;" class="font_container">Kontakt:</h5>
-        <p>tel:</p>
-        <p>E-mail:</p>
+        <p>tel: 324 234 432</p>
+        <p>E-mail: uslugistolarskie@gmail.com</p>
     </div>
     <div class="footer_box">
         <h5 style="border-bottom: 1px solid white;" class="font_container">Social Media:</h5>
-        <p>Facebook</p>
+        <p>Facebook: </p>
     </div>
-
 </div>
+    <div id="footer_right">
+    <form action="process_form.php" method="post">
+        <div class="font_form">
+            <div id="mail">
+        <label for="name">Adres e-mail:</label>
+        <input  type="text" id="name" name="name" required>
+            </div>
+            <div id="sub">
+        <label for="name">Temat:</label>
+        <input type="text" id="subject" name="subject" required>
+            </div>
+            <div id="msg">
+        <label for="message">Wiadomość:</label>
+        <textarea id="message" name="message" required></textarea>
+            </div>
+            <div id="but">
+                <input type="submit" value="Wyślij">
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+
 </body>
 </html>
