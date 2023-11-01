@@ -182,6 +182,7 @@
         .desc{
             display: flex;
             flex-direction: column;
+            justify-content: space-around;
         }
     }
     .desc_box
@@ -266,103 +267,111 @@
 
 
 
+/* STOPKA */
+#footer {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(146deg, rgba(0, 0, 0, 1) 0%, rgba(84, 85, 84, 1) 100%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    text-align: center;
+    justify-content: space-around;
+}
 
-    /*STOPKA*/
-    #footer
-    {
-        height: 400px;
-        width: 100%;
-        background: rgb(0,0,0);
-        background: linear-gradient(146deg, rgba(0,0,0,1) 0%, rgba(84,85,84,1) 100%);
-        display: flex;
-        flex-wrap: nowrap;
+#footer_left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: space-around;
+    max-width: 25%;
+}
+
+#footer_right {
+    width: 80%;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    font-family: 'Roboto Condensed';
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    #footer {
+        flex-direction: column;
     }
-    #footer_left
-    {
-        width: 30%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-around;
+    #footer_left,
+    #footer_right {
+        max-width: 100%; 
+        flex: 1;
     }
-    #footer_right
-    {
-        font-family: 'Playball';
-        color: white;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: stretch;
-        justify-content: center;
-        width: 80%;
-        border-left: 2px solid white;
-        font-family:'Roboto Condensed';
-    }
+}
 
     .footer_box
     {
         color: white;
     }
 
+#footer_right form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%; 
+}
+#form_combo
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
 
-    #mail{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    #sub{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    #msg
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    #but{
-        display: flex;
-        justify-content: center;
-    }
-    input[type="submit"]
-    {
-        background-color: white;
-        color: black;
-        border:none;
-        border-radius: 30px;
-        height: 30px;
-        width: 80px;
-        font-family:'Roboto Condensed';
-    }
-    input[type="submit"]:hover
-    {
-        color: white;
-        animation: scale 0.25s;
-        transform: scale(1.05);
-        background: rgb(0,0,0);
-        background: linear-gradient(146deg, rgba(0,0,0,1) 0%, rgba(84,85,84,1) 100%);
-    }
-    #footer_right input[type="text"]{
-       border-radius: 8px; 
-       width: 300px; 
-       height: 30px;
-    }
-      #footer_right textarea
-      {
-       border-radius: 8px; 
-       width: 500px; 
-       height:150px;
-       resize: none;
+#mail input[type="text"],
+#sub input[type="text"],
+#msg textarea {
+    border:none;
+    height: 30px;
+    resize: none;
+    margin: 5px;
+}
 
-      }
-    form{
-        display: flex;
-        align-items: center;
-        border:2px solid white;
-        border-radius: 10px;
-        padding: 0px 30px 0px 30px;
-        margin:20px 0 20px 0;
-    }
+#mail input[type="text"],
+#sub input[type="text"] {
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+#msg textarea{
+
+    height: 200px;
+    width: 100%;
+}
+
+input[type="submit"] {
+    background-color: white;
+    color: black;
+    border: none;
+    height: 30px; 
+    width: 25%; 
+    font-family: 'Roboto Condensed';
+}
+
+input[type="submit"]:hover,
+#mail input[type="text"]:hover,
+#sub input[type="text"]:hover,
+#msg textarea:hover {
+    color: white;
+    animation: scale 0.25s;
+    transform: scale(1.05);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(146deg, rgba(0, 0, 0, 1) 0%, rgba(84, 85, 84, 1) 100%);
+}
     a
     {
         text-decoration: none;
